@@ -3,9 +3,19 @@
 ## preparation
 
 1. make sure the folder structure remains the same  
+
+```
+root  
+|-- data/  
+|-- models/  
+|-- trainied_models/  
+```
+
+
     a. data in the data folder  
     b. `.py` files in the models folder  
     c. trained_models exist to store the trained models
+
 
 2. make sure the data in the data folder follows the same structure as `nmzpAgeSexFL.csv`, or edit `preprocess_data.py` to produce the right `.parquet` files for training
 
