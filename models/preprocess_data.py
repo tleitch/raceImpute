@@ -1,13 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv("data/nmzpAgeSexFL.csv")
-df = df.drop(columns=['Unnamed: 0', 'zip5', 'sex', 'age'])
-df.columns = ['first_name', 'last_name', 'race_cat']
-
-def process_florida_voter_dataset(df, include_race=['aian', 'api', 'nh_black', 'hispanic', 'nh_white']):
-    
+def process_florida_voter_dataset(df, 
     cat_race_map = {1: "aian", 2: "api", 3: "nh_black", 4: "hispanic", 5: "nh_white", 6: "other", 7: "multi_racial", 9: "unknown"}
+    include_race=['aian', 'api', 'nh_black', 'hispanic', 'nh_white']):
     
     df['race'] = df['race_cat'].map(cat_race_map)
     df = df[df['race'].isin(include_race)]
