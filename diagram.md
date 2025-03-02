@@ -1,17 +1,22 @@
 ```mermaid
 graph TD
 
+
+
+subgraph Model_Build
+  A["Voter Data(Name + Address)"] --> B["Race Prediction Model(NLP + Geolocation Data)"]-->C["Prediction Error Model(Geolocationally-correlated uncertainty estimation)"]
+
+end
 subgraph Data_Preparation
-  A["Voter Data(Name + Address)"] --> D["Race Prediction Model(NLP + Geolocation Data)"]
-  B["Raw Real Estate Data(NY Counties)"] --> C["Data Cleaning Process(NLP Model + Regex, iterative)"]
-  C --> E["Cleaned Data(Standardized Names)"]
+  D["Raw Real Estate Data(NY Counties)"] --> E["Data Cleaning Process(NLP Model + Regex, iterative)"]
+  E --> F["Cleaned Data(Standardized Names)"]
 end
 
-D --> F["Predicted Race per Individual"]
-E --> F
+F --> G["Predicted Race per Individual"]
+B --> G
 
-F --> G["Aggregate Race Predictions(Summarize Property Ownership by Census Tract)"]
-G --> H["Compare Predicted Ownership with Actual Census Data(Identify Net Renters and Landlords by Race)"]
-H --> I["Prediction Error Model(Geolocationally-correlated uncertainty estimation)"]
+G --> H["Aggregate Race Predictions(Summarize Property Ownership by Census Tract)"]
+H --> I["Compare Predicted Ownership with Actual Census Data(Identify Net Renters and Landlords by Race)"]
+C--> I
 I --> J["Evaluate Impact of Prediction Uncertainty(Assess robustness of conclusions)"]
 ```
