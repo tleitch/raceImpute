@@ -14,3 +14,4 @@ F --> G[Aggregate Race Predictions<br>(Summarize Property Ownership by Census Tr
 G --> H[Compare Predicted Ownership with Actual Census Data<br>(Identify Net Renters and Landlords by Race)]
 H --> I[Prediction Error Model<br>(Geolocationally-correlated uncertainty estimation)]
 I --> J[Evaluate Impact of Prediction Uncertainty<br>(Assess robustness of conclusions)]
+```
